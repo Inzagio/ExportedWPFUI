@@ -1,13 +1,15 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Caliburn.Micro;
 using WPFUI.Models;
+using WPFUI.Views;
 
 namespace WPFUI.ViewModels
 {
    [SuppressMessage("ReSharper", "UnusedMember.Global")]
    public class ShellViewModel : Conductor<object>
     { 
-        private string _firstName = "Trym";
+        private string _firstName;
         private string _lastName;
         private PersonModel _selectedPerson;
         private BindableCollection<PersonModel> _people = new BindableCollection<PersonModel>();
@@ -66,6 +68,12 @@ namespace WPFUI.ViewModels
             FirstName = string.Empty;
             LastName = string.Empty;
         }
+
+        //public void SearchDb(object sender, EventArgs e)
+        //{
+        //    DataAccess db = new DataAccess();
+        //    db.GetPeople(LastName);
+        //}
 
         public void LoadPageOne()
         {
