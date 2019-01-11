@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI.Views"
         mc:Ignorable="d" FontSize="18" Foreground="White" Background="#333333"
-        Title="ShellView" Height="550" Width="500" WindowStartupLocation="CenterScreen">
+        Title="ShellView" Height="550" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -23,34 +24,42 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        
-        <!-- Row 1 -->
-        <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" 
-                   Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"></TextBlock>
-        <!-- Row 2 -->
-        <TextBox x:Name="FirstName" Grid.Row="2" Grid.Column="1" MinWidth="100" Margin="5" Background="#333333"></TextBox>
 
-        <TextBox x:Name="LastName" Grid.Row="2" Grid.Column="2" MinWidth="100" Margin="5" Background="#333333"></TextBox>
-        
+        <!-- Row 1 -->
+        <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <!-- Row 2 -->
+        <Label Grid.Row="2" Grid.Column="1" Content="First Name"/>
+        <Label Grid.Row="2" Grid.Column="2" Content="Middle name"/>
+        <Label Grid.Row="2" Grid.Column="3" Content="Last name"/>
         <!-- Row 3 -->
-        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="People" Margin="0,5,0,5"
+        <TextBox x:Name="FirstName" Grid.Row="3" Grid.Column="1" MinWidth="100" Margin="0,0,5,0" Background="#333333"/>
+
+        <TextBox x:Name="MiddleName" Grid.Row="3" Grid.Column="2" MinWidth="100" Margin="0,0,0,0" Background="#333333"/>
+
+        <TextBox x:Name="LastName" Grid.Row="3" Grid.Column="3" MinWidth="100" Margin="5,0,0,0" Background="#333333"/>
+
+        <!-- Row 4 -->
+        <!--<ComboBox Grid.Row="4" Grid.Column="1" x:Name="People" Margin="0,5,0,5"
                   SelectedItem="{Binding Path=SelectedPerson, Mode=OneWayToSource}"
                   DisplayMemberPath="FirstName"/>
-        <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName" Margin="5,0,5,0"></TextBlock>
-        <!-- Row 4 -->
-        <Button x:Name="ClearText" Grid.Row="4" Grid.Column="1" Content="Clear Text" />
+        <TextBlock Grid.Row="4" Grid.Column="2" x:Name="SelectedPerson_LastName" Margin="5,0,5,0"></TextBlock>-->
+        <!-- Row 5 -->
+        <Button x:Name="ClearText" Grid.Row="5" Grid.Column="1" Margin="0,5,0,5" Content="Clear Text" />
         <!--<Button x:Name="SearchDb" Grid.Row="4" Grid.Column="2" Content="Search" Margin="5,0,5,0"/>-->
 
-        <!-- Row 5 -->
-        <Button x:Name="LoadPageOne" Grid.Row="5" Grid.Column="1" Margin="0,5,0,5" Content="Load First Page"/>
-        <Button x:Name="LoadPageTwo" Grid.Row="5" Grid.Column="2" Margin="5,5,5,5" Content="Load Second Page"/>
-        
         <!-- Row 6 -->
-        <ContentControl Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,5,0,5" 
+        <Button x:Name="SendData" Grid.Row="6" Grid.Column="1" Margin="0,5,0,5" Content="SendData"/>
+        <Button x:Name="LoadPageOne" Grid.Row="6" Grid.Column="2" Margin="5,5,5,5" Content="DisplayData"/>
+
+        <!-- Row 7 -->
+        <ContentControl Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,5,0,5" 
                         x:Name="ActiveItem"/>
+        <DataGrid x:Name="DataGrid" Grid.Column="6" HorizontalAlignment="Left" Height="314" Margin="0,5,0,0" Grid.Row="7" VerticalAlignment="Top" Width="417"/>
+
 
     </Grid>
 </Window>

@@ -20,6 +20,6 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Hei du har nå logget inn"></TextBlock>
-        <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Source="https://imgur.com/gallery/IwHYFSS"></Image>
+        <Image Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Source="https://imgur.com/gallery/IwHYFSS"></Image>
     </Grid>
 </UserControl>

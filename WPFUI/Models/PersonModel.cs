@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Caliburn.Micro;
+using Api.Client.Api;
 
 namespace WPFUI.Models
 {
@@ -16,5 +18,11 @@ namespace WPFUI.Models
 
 
         public string FullInfo => $"{FirstName} {LastName} ({EmailAddress})";
+
+        //public Action<TaskResult> blablabal()
+        //{
+        //    var client = new Client("localhost");
+        //    client.GetCertificationAsync(Guid.Empty);
+        //}
     }
 }
