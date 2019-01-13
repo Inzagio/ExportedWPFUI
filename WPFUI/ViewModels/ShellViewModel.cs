@@ -1,8 +1,7 @@
 ﻿using Caliburn.Micro;
 using System.Diagnostics.CodeAnalysis;
-using System.Windows.Controls;
 using WPFUI.Models;
-using Api.Client.Api;
+using WPFUI.Api;
 
 namespace WPFUI.ViewModels
 {
@@ -99,9 +98,9 @@ namespace WPFUI.ViewModels
         {
             var client = new Client("https://localhost:44367");
             var certifications = await client.GetCertificationsAsync("");
-             MyGrid.DataContext = certifications;
+             //MyGrid.DataContext = certifications;
 
-            //ActivateItem(new FirstChildViewModel());
+            ActivateItem(new FirstChildViewModel());
         }
 
         public void LoadPageTwo()

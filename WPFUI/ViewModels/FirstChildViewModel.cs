@@ -1,8 +1,5 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Caliburn.Micro;
-using Api.Client.Api;
+﻿using Caliburn.Micro;
+
 
 namespace WPFUI.ViewModels
 {
