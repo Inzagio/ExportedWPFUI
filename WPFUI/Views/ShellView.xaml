@@ -58,8 +58,7 @@
         <!-- Row 7 -->
         <ContentControl Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,5,0,5" 
                         x:Name="ActiveItem"/>
-        <DataGrid x:Name="DataGrid" Grid.Column="6" HorizontalAlignment="Left" Height="314" Margin="0,5,0,0" Grid.Row="7" VerticalAlignment="Top" Width="417"/>
-
+       
 
     </Grid>
 </Window>

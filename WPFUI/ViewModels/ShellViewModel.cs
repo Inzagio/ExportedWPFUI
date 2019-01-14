@@ -94,12 +94,8 @@ namespace WPFUI.ViewModels
         //    db.GetPeople(LastName);
         //}
 
-        public async void LoadPageOne()
+        public  void LoadPageOne()
         {
-            var client = new Client("https://localhost:44367");
-            var certifications = await client.GetCertificationsAsync("");
-             //MyGrid.DataContext = certifications;
-
             ActivateItem(new FirstChildViewModel());
         }
 
