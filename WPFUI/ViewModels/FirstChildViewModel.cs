@@ -11,7 +11,11 @@ namespace WPFUI.ViewModels
         public BindableCollection<Certification> Certifications
         {
             get => _certifications;
-            set => _certifications = value;
+            set
+            {
+                _certifications = value;
+                NotifyOfPropertyChange(() => Certifications);
+            }
         }
 
         public FirstChildViewModel()
@@ -22,7 +26,10 @@ namespace WPFUI.ViewModels
         public async void DisplayCertifications()
         {
             var client = new Client("https://localhost:44367");
-             Certifications = await client.GetCertificationsAsync("") as BindableCollection<Certification>;
+            //Certifications = await client.GetCertificationsAsync("") as BindableCollection<Certification>;
+            var certifications = await client.GetCertificationsAsync("");
+            _certifications.AddRange(certifications);
+            Certifications = _certifications;
             //_certifications = certifications;
         }
     }
