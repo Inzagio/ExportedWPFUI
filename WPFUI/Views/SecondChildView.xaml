@@ -7,6 +7,26 @@
              mc:Ignorable="d" Background="Green"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <TextBox x:Name="TextBox1"
+                 TextWrapping="Wrap"
+                 Margin="10, 10, 5, 5" Grid.Row="7">
+            The quick brown fox jumps over the lazy dog.
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="_Bold"
+                              IsCheckable="True"
+                             />
+                    <MenuItem Header="_Italic"
+                              IsCheckable="True"
+                             />
+                    <Separator />
+                    <MenuItem Header="I_ncrease Font Size"
+                              />
+                    <MenuItem Header="_Decrease Font Size"
+                               />
+
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
     </Grid>
 </UserControl>

@@ -88,13 +88,8 @@ namespace WPFUI.ViewModels
             LastName = string.Empty;
         }
 
-        //public void SearchDb(object sender, EventArgs e)
-        //{
-        //    DataAccess db = new DataAccess();
-        //    db.GetPeople(LastName);
-        //}
-
-        public  void LoadPageOne()
+        
+        public void DisplayCertifications()
         {
             ActivateItem(new FirstChildViewModel());
         }
