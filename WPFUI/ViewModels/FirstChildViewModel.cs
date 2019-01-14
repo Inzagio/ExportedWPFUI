@@ -22,7 +22,7 @@ namespace WPFUI.ViewModels
         public async void DisplayCertifications()
         {
             var client = new Client("https://localhost:44367");
-            var certifications = await client.GetCertificationsAsync("");
+             Certifications = await client.GetCertificationsAsync("") as BindableCollection<Certification>;
             //_certifications = certifications;
         }
     }
