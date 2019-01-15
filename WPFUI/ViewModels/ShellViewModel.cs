@@ -94,9 +94,14 @@ namespace WPFUI.ViewModels
             ActivateItem(new FirstChildViewModel());
         }
 
-        public void LoadPageTwo()
+        public void DisplayPeople()
         {
             ActivateItem(new SecondChildViewModel());
+        }
+
+        public void DisplayAddresses()
+        {
+            ActivateItem(new ThirdChildViewModel());
         }
     }
 }

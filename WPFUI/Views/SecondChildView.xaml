@@ -7,26 +7,48 @@
              mc:Ignorable="d" Background="Green"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBox x:Name="TextBox1"
-                 TextWrapping="Wrap"
-                 Margin="10, 10, 5, 5" Grid.Row="7">
-            The quick brown fox jumps over the lazy dog.
-            <TextBox.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="_Bold"
-                              IsCheckable="True"
-                             />
-                    <MenuItem Header="_Italic"
-                              IsCheckable="True"
-                             />
-                    <Separator />
-                    <MenuItem Header="I_ncrease Font Size"
-                              />
-                    <MenuItem Header="_Decrease Font Size"
-                               />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
 
-                </ContextMenu>
-            </TextBox.ContextMenu>
-        </TextBox>
+        <Label Grid.Row="1" Grid.Column="1" Content="Fornavn"></Label>
+        <Label Grid.Row="1" Grid.Column="2" Content="Mellomnavn"></Label>
+        <Label Grid.Row="1" Grid.Column="3" Content="Etternavn"></Label>
+
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="FirstName"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="MiddleName"/>
+        <TextBox Grid.Row="2" Grid.Column="3" x:Name="LastName"/>
+        <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Content="Save new Person" x:Name="SaveNewPerson"></Button> 
+        <DataGrid ItemsSource="{Binding Path=People}"  
+                  Grid.Column="1" HorizontalAlignment="Left" 
+                  Height="auto" Grid.Row="4" VerticalAlignment="Top"
+                  Width="auto"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header=" Navn" Width="250" Binding="{Binding Path=FullName}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--<Button x:Name="SaveUpdate" Content="Save"></Button>-->
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
     </Grid>
 </UserControl>
